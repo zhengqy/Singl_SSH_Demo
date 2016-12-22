@@ -9,7 +9,7 @@
 
     <context:property-placeholder location="classpath:database.properties"/>
 
-    <context:component-scan base-package="main.java.com.zhengqy"/>
+    <context:component-scan base-package="com.zhengqy.action"/>
 
     <bean id="dataSource" destroy-method="close" class="org.apache.commons.dbcp.BasicDataSource">
         <property name="driverClassName" value="${driverClassName}"/>
@@ -22,7 +22,7 @@
         <property name="dataSource" ref="dataSource"/>
         <property name="packagesToScan">
             <list>
-                <value>main.java.com.zhengqy</value>
+                <value>com.zhengqy.model</value>
             </list>
         </property>
 

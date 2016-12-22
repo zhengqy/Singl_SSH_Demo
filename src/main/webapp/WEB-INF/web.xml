@@ -3,7 +3,7 @@
   <display-name>Archetype Created Web Application</display-name>
   <context-param>
     <param-name>contextConfigLocation</param-name>
-    <param-value>classpath:spring.xml,classpath:spring-hibernate.xml</param-value>
+    <param-value>classpath:spring.xml,classpath:spring-hibernate.xml,classpath:spring-dao.xml,classpath:spring-service.xml</param-value>
   </context-param>
   
   <listener>
@@ -30,14 +30,14 @@
     <init-param>
       <description>spring mvc 配置文件</description>
       <param-name>contextConfigLocation</param-name>
-      <param-value>classpath:spring-mvc.xml</param-value>
+      <param-value>classpath:spring.xml,classpath:spring-hibernate.xml,classpath:spring-dao.xml,classpath:spring-service.xml</param-value>
     </init-param>
     <load-on-startup>1</load-on-startup>
   </servlet>
   
   <servlet-mapping>
     <servlet-name>springMvc</servlet-name>
-    <url-pattern>*.html</url-pattern>
+    <url-pattern>*.do</url-pattern>
   </servlet-mapping>
   
   <session-config>
