@@ -16,10 +16,12 @@ public class UserDAOImpl implements UserDAO {
         Session session = null;
         Transaction transaction = null;
         try {
+            //<editor-fold desc="Description">
             session = sessionFactory.getCurrentSession();
             transaction = session.beginTransaction();
             session.save(guser);
             transaction.commit();
+            //</editor-fold>
             return true;
         }catch (Exception e){
             e.printStackTrace();
