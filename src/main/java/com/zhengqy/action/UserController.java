@@ -2,8 +2,8 @@ package com.zhengqy.action;
 
 
 import com.zhengqy.model.Guser;
-import com.zhengqy.service.UserService;
 import org.springframework.web.servlet.ModelAndView;
+import com.zhengqy.service.UserService;
 import org.springframework.web.servlet.mvc.Controller;
 
 import javax.servlet.http.HttpServletRequest;
@@ -16,6 +16,7 @@ public class UserController implements Controller{
     private UserService userService;
 
     public ModelAndView handleRequest(HttpServletRequest request, HttpServletResponse response) throws Exception {
+        System.out.println("+++++++++++++++++++++++++++++进入 controller++++++++++++++++++++++++++++");
         ModelAndView modelAndView = new ModelAndView();
         String username = request.getParameter("username");
         String password = request.getParameter("password");
@@ -30,7 +31,7 @@ public class UserController implements Controller{
         guser.setMobile(mobile);
         boolean flag = userService.add(guser);
         if (flag){
-            modelAndView.setViewName("index");
+            modelAndView.setViewName("user");
         }
         return modelAndView;
     }

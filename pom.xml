@@ -31,7 +31,7 @@
 
     <!--其他变量 start-->
     <war-name.version>ssm</war-name.version>
-    <jdk.version>1.8.0_91</jdk.version>
+    <jdk.version>1.8</jdk.version>
 
     <tomcat-port.version>8080</tomcat-port.version>
     <tomcat-uri-encoding.version>UTF-8</tomcat-uri-encoding.version>
@@ -49,6 +49,8 @@
     <!--指定Maven用什么编码来呈现站点的HTML文件-->
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
   </properties>
+
+
 
   <dependencies>
     <!-- log4j -->
@@ -145,6 +147,12 @@
       <groupId>org.hibernate</groupId>
       <artifactId>hibernate-core</artifactId>
       <version>4.2.0.Final</version>
+    </dependency>
+
+    <dependency>
+      <groupId>jstl</groupId>
+      <artifactId>jstl</artifactId>
+      <version>1.2</version>
     </dependency>
 
     <dependency>
@@ -290,5 +298,15 @@
       </plugin>
 
     </plugins>
+
+    <resources>
+      <resource>
+        <directory>src/main/resources</directory>
+        <includes>
+          <include>*.xml</include>
+          <include>*.properties</include>
+        </includes>
+      </resource>
+    </resources>
   </build>
 </project>
