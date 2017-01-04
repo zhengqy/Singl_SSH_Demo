@@ -1,6 +1,7 @@
 package com.zhengqy.model;
 
 
+import com.alibaba.fastjson.JSONObject;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
@@ -10,7 +11,7 @@ import javax.persistence.*;
  */
 @Entity
 @Table(name = "g_user")
-public class Guser {
+public class Guser  implements ModelInterface{
     @Id
     @GeneratedValue(generator = "uuid")
     @GenericGenerator(name = "uuid",strategy = "uuid")
@@ -75,5 +76,17 @@ public class Guser {
 
     public void setMobile(String mobile) {
         this.mobile = mobile;
+    }
+
+    @Override
+    public String toJson() {
+        JSONObject jsonObject = new JSONObject();
+        jsonObject.put("uuid",uuid);
+        jsonObject.put("username",username);
+        jsonObject.put("password",password);
+        jsonObject.put("realname",realname);
+        jsonObject.put("email",email);
+        jsonObject.put("mobile",mobile);
+        return jsonObject.toJSONString();
     }
 }
